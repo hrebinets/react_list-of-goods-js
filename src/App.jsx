@@ -54,11 +54,7 @@ export const App = () => {
   };
 
   const handleReverse = () => {
-    if (reversed) {
-      setReversed(false);
-    } else {
-      setReversed(true);
-    }
+    setReversed(!reversed);
   };
 
   const ourGoods = getPreparedGoods(goodsFromServer, sortField, reversed);
@@ -79,7 +75,7 @@ export const App = () => {
 
         <button
           type="button"
-          className={`button is-succed ${sortField === SORT_FIELD_LENGTH ? '' : 'is-light'}`}
+          className={`button is-success ${sortField === SORT_FIELD_LENGTH ? '' : 'is-light'}`}
           onClick={() => {
             handleSort(SORT_FIELD_LENGTH);
             setWasClicked(true);
